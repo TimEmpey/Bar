@@ -7,14 +7,16 @@ window.onload = function() {
     drinkMenu.setAttribute("class", "hidden");
     let under21Message = document.getElementById("under-21");
     under21Message.setAttribute("class", "hidden");
-    const age = parsInt (document.querySelector("input#age").value);
 
-    if(age>=21) {
+    const age = parseInt(document.querySelector("input#age").value);
+
+    if (age > 21) { 
       drinkMenu.removeAttribute("class");
-    } else if (age === 21){
-      window.alert("Have some fun, you just made the cut")
-    }else {
+    } else if (age === 21) { 
+      window.alert("Have some fun, you’re just 21!");
+      drinkMenu.removeAttribute("class");
+    } else {
       under21Message.removeAttribute("class");
     }
-  }
-}
+  };
+};
